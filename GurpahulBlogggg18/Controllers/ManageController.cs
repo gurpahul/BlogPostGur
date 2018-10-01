@@ -10,9 +10,12 @@ using GurpahulBlogggg18.Models;
 
 namespace GurpahulBlogggg18.Controllers
 {
+    [RequireHttps]
     [Authorize]
     public class ManageController : Controller
+
     {
+      
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 

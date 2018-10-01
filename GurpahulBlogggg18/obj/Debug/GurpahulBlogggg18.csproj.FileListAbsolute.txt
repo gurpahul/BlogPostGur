@@ -118,3 +118,7 @@ C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\obj\Debug\Gurpahu
 C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\obj\Debug\GurpahulBlogggg18.csproj.CopyComplete
 C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\obj\Debug\GurpahulBlogggg18.dll
 C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\obj\Debug\GurpahulBlogggg18.pdb
+C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\bin\PagedList.dll
+C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\bin\PagedList.Mvc.dll
+C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\bin\PagedList.xml
+C:\Users\SD03\source\repos\GurpahulBlogggg18\GurpahulBlogggg18\bin\PagedList.Mvc.xml

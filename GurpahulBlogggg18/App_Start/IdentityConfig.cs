@@ -11,15 +11,30 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using GurpahulBlogggg18.Models;
+using System.Net.Mail;
+using System.Web.Configuration;
 
 namespace GurpahulBlogggg18
 {
+
+
+
+
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            var personalEmailService = new PersonalEmailService();
+            var mailMessage = new MailMessage(
+               "gurpahulsingh13@gmail.com",
+               message.Destination
+               );
+            mailMessage.Body = message.Body;
+            mailMessage.Subject = message.Subject;
+            mailMessage.IsBodyHtml = true;
+
+
+            return personalEmailService.SendAsync(mailMessage);
         }
     }
 

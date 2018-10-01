@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GurpahulBlogggg18.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,11 +7,14 @@ using System.Web.Mvc;
 
 namespace GurpahulBlogggg18.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
+        
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            return View();
+            return View(db.Posts.ToList());
         }
 
         public ActionResult About()

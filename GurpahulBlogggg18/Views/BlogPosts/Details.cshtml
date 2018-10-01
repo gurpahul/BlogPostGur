@@ -58,7 +58,7 @@
             @if (Model.MediaUrl != null)
             {
 
-            <img class="img-responsive" src="@Model.MediaUrl" alt="">
+                <img class="img-responsive" src="@Model.MediaUrl" alt="">
             }
         </dd>
 
@@ -72,6 +72,45 @@
 
     </dl>
 </div>
+
+<div>
+    Comments:
+    @foreach (var comment in Model.Comments)
+    {
+        <p>
+            @comment.Body - by @comment.Author.DisplayName - @comment.Created.ToString("dd/MM/yyyy HH:mm")
+        </p>
+
+        if (User.Identity.IsAuthenticated &&
+            (User.IsInRole("Admin") || User.IsInRole("Moderator")))
+        {
+            <a href="@Url.Action("Edit", "Comments", new { id = comment.Id } )">Edit Comment</a>
+            <a href="@Url.Action("Delete", "Comments", new { id = comment.Id })">Delete Comment</a>
+        }
+
+    }
+</div>
+@if (User.Identity.IsAuthenticated)
+{
+    <div>
+        Submit your comment!
+    </div>
+    <div>
+        @using (Html.BeginForm("DetailsSlug", "BlogPosts", FormMethod.Post))
+        {
+            <input type="hidden" name="slug" value="@Model.Slug" />
+            <textarea name="Body"></textarea>
+            if (ViewBag.ErrorMessage != null)
+            {
+                <span>@ViewBag.ErrorMessage</span>
+            }
+            <input type="submit" value="Submit" />
+        }
+    </div>
+}
+
+
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")

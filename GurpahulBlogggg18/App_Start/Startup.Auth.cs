@@ -58,11 +58,11 @@ namespace GurpahulBlogggg18
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "523455069917-n06iahbgdumm5hiepu99vuog44mhqi14.apps.googleusercontent.com",
+                ClientSecret = "EFTkyAD6T7mq5hfMvq3ZYj23"
+            });
         }
     }
 }

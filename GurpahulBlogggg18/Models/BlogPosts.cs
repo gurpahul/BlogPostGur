@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace GurpahulBlogggg18.Models
 {
+  
     public class BlogPosts
     {
         public BlogPosts()
         {
-            this.Comments = new HashSet<Comments>();
+            this.Comments = new List<Comments>();
             this.Created = DateTime.Now;
         }
         public int Id { get; set; }
